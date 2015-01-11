@@ -39,7 +39,7 @@ public class balanceChecker{
 		String rightside = pair.split()[1];
 		Boolean left_side_found = false;
 		while(!s.isEmpty()){
-			line = s.pop();
+			String line = s.pop();
 			if( line.contains(leftside) ){
 				left_side_found = true;
 			}
