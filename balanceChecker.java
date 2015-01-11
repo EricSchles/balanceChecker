@@ -17,6 +17,10 @@ class Stack<T>{
 	public Object pop(){
 		return arr.remove(arr.size() -1);
 	}
+
+	public Boolean isEmpty(){
+		return arr.isEmpty();
+	}
 }
 
 public class balanceChecker{
@@ -30,7 +34,10 @@ public class balanceChecker{
 		}
 	}
 
-	public Boolean check(String pairs){
-		pairs.split(pairs);
-	}
+	public Boolean check(String pair){
+		String leftside = pair.split()[0];
+		String rightside = pair.split()[1];
+		while()
+		s.
+	}	
 }
