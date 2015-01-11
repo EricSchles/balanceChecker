@@ -38,10 +38,27 @@ public class balanceChecker{
 		String leftside = pair.split()[0];
 		String rightside = pair.split()[1];
 		Boolean left_side_found = false;
+		Boolean balanced = true;
 		while(!s.isEmpty()){
 			String line = s.pop();
+			
+			if( !left_side_found){
+				if(line.contains(rightside)){
+					return false;
+					//this means we found a right side before a left side
+				}
+			}
+
 			if( line.contains(leftside) ){
 				left_side_found = true;
+				balanced = false;
+			}
+
+			if(left_side_found){
+				if(line.contains(rightside)){
+					balanced = true;
+					left_side_found = false;
+				}
 			}
 		}
 		
