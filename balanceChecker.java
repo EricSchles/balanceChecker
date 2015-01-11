@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
-class Stack<T>{
+class Stack{
 	private ArrayList arr;
 	public Stack(){
 		arr = new ArrayList();
 	}
-	public <T> Stack(T input){
+	public Stack(String input){
 		arr = new ArrayList();
 		arr.add(input);
 	}
 
-	public <T> void push(T input){
+	public void push(String input){
 		arr.add(input);
 	}
 
-	public Object pop(){
-		return arr.remove(arr.size() -1);
+	public String pop(){
+		return arr.remove(arr.size() -1).toString();
 	}
 
 	public Boolean isEmpty(){
@@ -28,15 +28,17 @@ public class balanceChecker{
 	String str;
 
 	balanceChecker(String str){
-		s = Stack();
-		for(String line : str){
+		s = new Stack();
+		String[] arr = str.split("\n");
+		for(String line : arr){
 			s.push(line);
 		}
 	}
 
-	public Boolean check(String pair){
-		String leftside = pair.split()[0];
-		String rightside = pair.split()[1];
+	public Boolean check(String closure){
+		String[] pair = closure.split("");
+		String leftside = pair[0];
+		String rightside = pair[1];
 		Boolean left_side_found = false;
 		Boolean balanced = true;
 		while(!s.isEmpty()){
@@ -61,6 +63,6 @@ public class balanceChecker{
 				}
 			}
 		}
-		
+		return balanced;	
 	}	
 }
